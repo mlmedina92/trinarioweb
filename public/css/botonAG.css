@@ -1,0 +1,27 @@
+#btnAG{
+background: #333333;
+margin: 5px;
+padding: 15px 8px 8px 8px;
+border-radius: 10px;
+border-left: 10px solid #2D572C;
+border-right: 10px solid #ECD11F;
+width: 175px;
+height: 30px;
+position: fixed;
+top: 160px;
+box-shadow: 2px 2px 3px #999;
+z-index: 1059;
+    
+
+}
+
+.textoAG{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    font-family: century gothic;
+    
+}
+

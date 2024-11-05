@@ -1,0 +1,194 @@
+.r-tabs .r-tabs-nav {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #28A12C;
+    height: 50px;
+}
+
+.r-tabs .r-tabs-nav.valores {
+    margin: 20px 0 0;
+}
+
+.r-tabs .r-tabs-tab {
+    /*display: inline-block;*/
+    float: left;
+    list-style: none;
+    margin-right: 1px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.r-tabs .r-tabs-panel {
+    padding: 15px 0 0;
+    display: none;
+}
+
+.r-tabs .r-tabs-accordion-title {
+    display: none;
+}
+
+.r-tabs .r-tabs-panel.r-tabs-state-active {
+    display: block;
+}
+
+/* Tabs container */
+.r-tabs {
+    position: relative;
+}
+
+/* Tab element */
+.r-tabs .r-tabs-nav .r-tabs-tab {
+    position: relative;
+}
+
+.valores .r-tabs-tab {
+    margin-right: 15px;
+}
+.r-tabs-tab.last{
+    margin-right: 0;
+}
+
+.r-tabs-tab span.linktext{
+    display: none;
+}
+/* Tab anchor */
+.r-tabs .r-tabs-nav .r-tabs-anchor {
+    display:block;
+    text-decoration: none;
+    background: rgba(0,0,0,0.05);
+    color: #269F2C;
+    text-align: center;
+    font-size: 17px;
+}
+
+.r-tabs .r-tabs-nav .r-tabs-anchor span{
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+#tabmetodologia .r-tabs-tab{
+    width: 24.5%;
+}
+
+#tabelegirnos .r-tabs-tab{
+    width: 24.5%;
+}
+
+#tabvalores .r-tabs-tab{
+    width: 19%;
+}
+
+.r-tabs .r-tabs-nav .r-tabs-anchor:hover{
+    color: #FCEAE9;
+    background: #F2AA12;
+}
+
+/* Disabled tab */
+.r-tabs .r-tabs-nav .r-tabs-state-disabled {
+    opacity: 0.5;
+}
+
+/* Active state tab anchor */
+.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor {
+    color: #FCEAE9;
+    background-color: #28A12C;
+}
+
+.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor:before{
+    content: "";
+    position: absolute;
+    background: url("../images/tab-active.png");
+    height: 6px;
+    width: 13px;
+    bottom: -7px;
+    left: 50%;
+    margin-left: -6px;
+}
+
+/* Accordion anchor */
+.r-tabs .r-tabs-accordion-title .r-tabs-anchor {
+    display: block;
+    padding: 10px;
+    background: rgba(0,0,0,0.07);
+    color: #269F2C;
+    text-decoration: none;
+    font-size: 17px;
+    margin-bottom: 1px;
+    text-align: left;
+}
+
+.r-tabs .r-tabs-accordion-title .r-tabs-anchor span{
+    font-size: 24px;
+    vertical-align: middle;
+}
+/* Active accordion anchor */
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor {
+    color: #FCEAE9;
+    background-color: #28A12C;
+}
+
+.r-tabs .r-tabs-accordion-title .r-tabs-anchor:hover{
+    color: #FCEAE9;
+    background: #F2AA12;
+}
+@media only screen and (max-width: 1150px) {
+    #tabmetodologia ul.r-tabs-nav li:first-child{
+        width: 28%;
+    }
+    #tabmetodologia ul.r-tabs-nav li:nth-child(2){
+        width: 20%;
+    }
+    #tabmetodologia ul.r-tabs-nav li:nth-child(3){
+        width: 20%;
+    }
+    #tabmetodologia ul.r-tabs-nav li:nth-child(4){
+        width: 31%;
+    }
+}
+@media only screen and (max-width: 960px) {
+    #tabvalores ul.r-tabs-nav li:first-child{
+        width: 22%;
+    }
+    #tabvalores ul.r-tabs-nav li:nth-child(2){
+        width: 17%;
+    }
+    #tabvalores ul.r-tabs-nav li:nth-child(3){
+        width: 15%;
+    }
+    #tabvalores ul.r-tabs-nav li:nth-child(5){
+        width: 26%;
+    }
+    #tabmetodologia.r-tabs .r-tabs-nav .r-tabs-anchor{
+        font-size: 15px;
+    }
+    #tabmetodologia.r-tabs .r-tabs-nav .r-tabs-anchor span{
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 641px) and (max-width: 800px) {
+    #tabmetodologia.r-tabs .r-tabs-nav .r-tabs-anchor{
+        line-height: 16px;
+        padding-top: 5px;
+        height: 45px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .r-tabs .r-tabs-nav .r-tabs-anchor{
+        font-size: 15px;
+    }
+    .r-tabs .r-tabs-nav .r-tabs-anchor span{
+        font-size: 24px;
+    }
+}
+
+/* Accordion responsive breakpoint */
+@media only screen and (max-width: 640px) {
+    .r-tabs .r-tabs-nav {
+        display: none;
+    }
+
+    .r-tabs .r-tabs-accordion-title {
+        display: block;
+    }
+}

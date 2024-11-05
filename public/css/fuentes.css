@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'CandaraRegular';
+    src: url('fuentes/candara-regular.eot');
+    src: url('fuentes/candara-regular.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/candara-regular.woff') format('woff'),
+         url('fuentes/candara-regular.ttf') format('truetype'),
+         url('fuentes/candara-regular.svg#CandaraRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CandaraBold';
+    src: url('fuentes/candarab-bold.eot');
+    src: url('fuentes/candarab-bold.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/candarab-bold.woff') format('woff'),
+         url('fuentes/candarab-bold.ttf') format('truetype'),
+         url('fuentes/candarab-bold.svg#CandaraBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
