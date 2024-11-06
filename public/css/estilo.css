@@ -400,7 +400,11 @@ form label.error{
 }
 
 
-form input[type="text"], form textarea{
+form input[type="text"],
+form input[type="tel"] ,
+
+form input[type="email"],
+form textarea{
 	background: #FBFBFB;
 	width: 97%;
 	padding: 8px 6px;
