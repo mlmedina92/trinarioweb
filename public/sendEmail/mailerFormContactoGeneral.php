@@ -25,11 +25,11 @@ function sendEmail()
     // Configurar la instancia de PHPMailer         
     $mailFormContactoGeneral = new PHPMailer();
     $mailFormContactoGeneral->isSMTP();
-    $mailFormContactoGeneral->Host = '';               // Host del servidor SMTP
+    $mailFormContactoGeneral->Host = 'mail.smtp2go.com';               // Host del servidor SMTP
     $mailFormContactoGeneral->SMTPAuth = true;                         // Habilitar autenticación SMTP
-    $mailFormContactoGeneral->Username = '';        // Tu dirección de correo electrónico
-    $mailFormContactoGeneral->Password = '';           // Tu contraseña de correo electrónico
-    $mailFormContactoGeneral->SMTPSecure = '';                      // Habilitar cifrado TLS
+    $mailFormContactoGeneral->Username = 'webform@trinario.com';        // Tu dirección de correo electrónico
+    $mailFormContactoGeneral->Password = 'wKngkxzU0iBgvuWs';           // Tu contraseña de correo electrónico
+    $mailFormContactoGeneral->SMTPSecure = 'tls';                      // Habilitar cifrado TLS
     $mailFormContactoGeneral->Port = 587;                              // Puerto SMTP
 
     // $mailFormContactoGeneral->SMTPDebug = 2; // Modo depuración detallado
@@ -59,7 +59,7 @@ function sendEmail()
 
     // Configurar el contenido del correo electrónico
     $mailFormContactoGeneral->setFrom($emailFormContactoGeneral, $nombreFormContactoGeneral);
-    $mailFormContactoGeneral->addAddress('contactanos@riavere.com', 'Riavere');
+    $mailFormContactoGeneral->addAddress('lm30540@gmail.com', 'Contacto - Trinario');
     $mailFormContactoGeneral->Subject = $asuntoFormContactoGeneral;
 
     // Permite que el contenido del correo sea interpretado como HTML.
@@ -79,7 +79,7 @@ function sendEmail()
     }
 
     //creamos la url de manera dinamica
-    $url = "http://localhost/riavere_com/public/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
+    $url = "http://localhost/trinario_com/public/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
     // Redirigir al archivo HTML con el mensaje
     header("Location: " . $url);
     exit(); // salir después de redirigir

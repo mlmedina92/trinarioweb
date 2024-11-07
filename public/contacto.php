@@ -133,7 +133,7 @@ require_once("include/header.php");
         <h2 class="mbottom5">Contáctenos</h2>
         <div class="separador mbottom30"></div>
 
-        <form action="contacto.php" method="post" id="formContacto" name="formContacto" class="frmcontact">
+        <form action="sendEmail/mailerFormContactoGeneral.php" method="POST" id="formContacto" name="formContacto" class="frmcontact">
             <input type="hidden" name="form" id="form" value="send" />
 
             <label for="nameFormContactoGeneral">Nombre / Empresa:</label>
@@ -159,6 +159,7 @@ require_once("include/header.php");
                 </div>
             </div>
             <h3 style="color:<?php echo $code ?>"><?php echo $messageContacto; ?></h3>
+            
 
             <input type="submit" name="cbEnviar" value="Enviar" class="mtop10">
         </form>

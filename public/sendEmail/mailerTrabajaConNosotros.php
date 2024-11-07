@@ -24,19 +24,16 @@ function sendEmail()
     // demian debe enviarnos los datos de envio de los formularios de esta web      
     $mailTrabajaConNosotros = new PHPMailer();
     $mailTrabajaConNosotros->isSMTP();
-    $mailTrabajaConNosotros->Host = '';               // Host del servidor SMTP
+    $mailTrabajaConNosotros->Host = 'mail.smtp2go.com';               // Host del servidor SMTP
     $mailTrabajaConNosotros->SMTPAuth = true;                       // Habilitar autenticación SMTP
-    $mailTrabajaConNosotros->Username = '';       // Tu dirección de correo electrónico
-    $mailTrabajaConNosotros->Password = '';       // Tu contraseña de correo electrónico
+    $mailTrabajaConNosotros->Username = 'webform@trinario.com';       // Tu dirección de correo electrónico
+    $mailTrabajaConNosotros->Password = 'wKngkxzU0iBgvuWs';       // Tu contraseña de correo electrónico
     $mailTrabajaConNosotros->SMTPSecure = 'tls';   // Habilitar cifrado TLS
-    $mailTrabajaConNosotros->Port = 121222112212122121212121;               // Puerto SMTP
+    $mailTrabajaConNosotros->Port = 587;               // Puerto SMTP
 
-    // $mailTrabajaConNosotros->SMTPDebug = 2; // Modo depuración detallado
-    // $mailTrabajaConNosotros->Debugoutput = 'html'; // Salida de depuración en HTML
+    //  $mailTrabajaConNosotros->SMTPDebug = 2; // Modo depuración detallado
+    //  $mailTrabajaConNosotros->Debugoutput = 'html'; // Salida de depuración en HTML
     //generacion de body(contendo del correo)
-
-
-
     $body = "
     <html>
         <head>
@@ -56,7 +53,7 @@ function sendEmail()
 
     // Configurar el contenido del correo electrónico
     $mailTrabajaConNosotros->setFrom($emailTrabajaConNosotros, $nombreTrabajaConNosotros);
-    $mailTrabajaConNosotros->addAddress('lm30540@gmail.com', 'Trinario');
+    $mailTrabajaConNosotros->addAddress('lm30540@gmail.com', 'Trabaja con nosotros - Trinario');
     $mailTrabajaConNosotros->Subject = $asuntoTrabajaConNosotros;
 
     // Permite que el contenido del correo sea interpretado como HTML.
