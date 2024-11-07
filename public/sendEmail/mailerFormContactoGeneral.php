@@ -59,7 +59,7 @@ function sendEmail()
 
     // Configurar el contenido del correo electrónico
     $mailFormContactoGeneral->setFrom($emailFormContactoGeneral, $nombreFormContactoGeneral);
-    $mailFormContactoGeneral->addAddress('lm30540@gmail.com', 'Contacto - Trinario');
+    $mailFormContactoGeneral->addAddress('contacto@trinario.com', 'Contacto - Trinario');
     $mailFormContactoGeneral->Subject = $asuntoFormContactoGeneral;
 
     // Permite que el contenido del correo sea interpretado como HTML.
@@ -79,7 +79,7 @@ function sendEmail()
     }
 
     //creamos la url de manera dinamica
-    $url = "http://localhost/trinario_com/public/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
+    $url = "https://trinario.com/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
     // Redirigir al archivo HTML con el mensaje
     header("Location: " . $url);
     exit(); // salir después de redirigir
