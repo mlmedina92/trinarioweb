@@ -79,7 +79,7 @@ function sendEmail()
     }
 
     //creamos la url de manera dinamica
-    $url = "https://trinario_com/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
+    $url = "https://trinario_com/public/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
     // Redirigir al archivo HTML con el mensaje
     header("Location: " . $url);
     exit(); // salir después de redirigir
