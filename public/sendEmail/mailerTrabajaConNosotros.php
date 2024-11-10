@@ -78,6 +78,6 @@ function sendEmail()
         $code='green';
     }
     // Redirigir al archivo HTML con el mensaje
-    header("Location: http://localhost/trinario_com/public/trabaja-con-nosotros.php?message=" . urlencode($message)."&code=" . urlencode($code));
+    header("Location: https://trinario.com/trabaja-con-nosotros.php?message=" . urlencode($message)."&code=" . urlencode($code));
     exit(); // salir después de redirigir
 }
