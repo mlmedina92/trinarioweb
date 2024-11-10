@@ -53,7 +53,7 @@ function sendEmail()
 
     // Configurar el contenido del correo electrónico
     $mailTrabajaConNosotros->setFrom($emailTrabajaConNosotros, $nombreTrabajaConNosotros);
-    $mailTrabajaConNosotros->addAddress('lm30540@gmail.com', 'Trabaja con nosotros - Trinario');
+    $mailTrabajaConNosotros->addAddress('rrhh@trinario.com', 'Trabaja con nosotros - Trinario');
     $mailTrabajaConNosotros->Subject = $asuntoTrabajaConNosotros;
 
     // Permite que el contenido del correo sea interpretado como HTML.

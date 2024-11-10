@@ -59,7 +59,7 @@ function sendEmail()
 
     // Configurar el contenido del correo electrónico
     $mailFormContactoGeneral->setFrom($emailFormContactoGeneral, $nombreFormContactoGeneral);
-    $mailFormContactoGeneral->addAddress('lm30540@gmail.com', 'Contacto - Trinario');
+    $mailFormContactoGeneral->addAddress('contacto@trinario.com', 'Contacto - Trinario');
     $mailFormContactoGeneral->Subject = $asuntoFormContactoGeneral;
 
     // Permite que el contenido del correo sea interpretado como HTML.
