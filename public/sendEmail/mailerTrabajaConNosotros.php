@@ -33,7 +33,7 @@ function sendEmail()
 
     //  $mailTrabajaConNosotros->SMTPDebug = 2; // Modo depuración detallado
     //  $mailTrabajaConNosotros->Debugoutput = 'html'; // Salida de depuración en HTML
-    //generacion de body(contendo del correo)
+    // generacion de body(contendo del correo)
     $body = "
     <html>
         <head>
@@ -53,7 +53,8 @@ function sendEmail()
 
     // Configurar el contenido del correo electrónico
     $mailTrabajaConNosotros->setFrom($emailTrabajaConNosotros, $nombreTrabajaConNosotros);
-    $mailTrabajaConNosotros->addAddress('rrhh@trinario.com', 'Trabaja con nosotros - Trinario');
+    // $mailTrabajaConNosotros->addAddress('rrhh@trinario.com', 'Trabaja con nosotros - Trinario');
+    $mailTrabajaConNosotros->addAddress('lm30540@gmail.com', 'Trabaja con nosotros - Trinario');
     $mailTrabajaConNosotros->Subject = $asuntoTrabajaConNosotros;
 
     // Permite que el contenido del correo sea interpretado como HTML.
@@ -77,7 +78,10 @@ function sendEmail()
         $message = 'El mensaje pudo ser enviado';
         $code='green';
     }
+
     // Redirigir al archivo HTML con el mensaje
-    header("Location: https://trinario_com/public/trabaja-con-nosotros.php?message=" . urlencode($message)."&code=" . urlencode($code));
+    header("Location: http://trinario_com/public/trabaja-con-nosotros.php?message=" . urlencode($message)."&code=" . urlencode($code));
+
+    
     exit(); // salir después de redirigir
 }
