@@ -71,10 +71,10 @@ function sendEmail()
 
     // Procesar el envío del correo electrónico
     if (!$mailFormContactoGeneral->send()) {
-        $message = "El mensaje no pudo ser enviado.";
+        $message = "Su mensaje no ha sido enviado";
         $code = 'red';
     } else {
-        $message = 'El mensaje pudo ser enviado';
+        $message = 'Su mensaje ha sido enviado.';
         $code = 'green';
     }
 
