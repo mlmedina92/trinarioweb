@@ -72,15 +72,15 @@ function sendEmail()
 
     // Procesar el envío del correo electrónico
     if (!$mailFormContactoGeneral->send()) {
-        $message = "El mensaje no pudo ser enviado.";
+        $message = "El mensaje no ha sido enviado.";
         $code = 'red';
     } else {
-        $message = 'El mensaje pudo ser enviado';
+        $message = 'El mensaje ha sido enviado';
         $code = 'green';
     }
 
     //creamos la url de manera dinamica
-    $url = "http://trinario_com/public/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
+    $url = "https://trinario.com/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
     // Redirigir al archivo HTML con el mensaje
     header("Location: " . $url);
     exit(); // salir después de redirigir
