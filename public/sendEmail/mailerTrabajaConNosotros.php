@@ -8,7 +8,43 @@ include 'PHPMailer-master/src/Exception.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Llamar a la función si la request es de tipo POST
-    sendEmail();
+    // VALIDACIONES DE RECAPTCHA GOOGLE
+    $secretKey = "6LcSd7wqAAAAAPRIkIh5lkBKVi4oWpRwyNvbF28V";
+    $responseKey = $_POST['g-recaptcha-response'];
+    $userIP =  $_SERVER['REMOTE_ADDR'];
+
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = [
+        'secret' => $secretKey,
+        'response' => $responseKey,
+        'remoteip' => $userIP,
+    ];
+
+    $options = [
+        'http' => [
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data),
+        ],
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $response = json_decode($result);
+
+    if ($response->success) {
+        // Llamar a la función si la request es de tipo POST
+        sendEmail();
+    } else {
+        $msj = "Por favor, confirma que no eres un robot.";
+        $color = "red";
+        //creamos la url de manera dinamica
+        $url = "https://trinario.com/trabaja-con-nosotros.php?message=" . urlencode($mjs) . "&code=" . urlencode($color);
+        //    $url = "http://Localhost/trinario_com/public/trabaja-con-nosotros.php?message=" . urlencode($msj) . "&code=" . urlencode($color);
+        // Redirigir al archivo HTML con el mensaje
+        header("Location: " . $url);
+        exit(); // salir después de redirigir
+    }
 }
 
 function sendEmail()
@@ -53,8 +89,8 @@ function sendEmail()
 
     // Configurar el contenido del correo electrónico
     $mailTrabajaConNosotros->setFrom($emailTrabajaConNosotros, $nombreTrabajaConNosotros);
-    // $mailTrabajaConNosotros->addAddress('rrhh@trinario.com', 'Trabaja con nosotros - Trinario');
     $mailTrabajaConNosotros->addAddress('rrhh@trinario.com', 'Trabaja con nosotros - Trinario');
+    // $mailTrabajaConNosotros->addAddress('lm30540@gmail.com', 'Trabaja con nosotros - Trinario');
     $mailTrabajaConNosotros->Subject = $asuntoTrabajaConNosotros;
 
     // Permite que el contenido del correo sea interpretado como HTML.
@@ -73,15 +109,16 @@ function sendEmail()
     // Procesar el envío del correo electrónico
     if (!$mailTrabajaConNosotros->send()) {
         $message = "El mensaje no ha sido enviado.";
-        $code='red';
+        $code = 'red';
     } else {
         $message = 'El mensaje ha sido enviado';
-        $code='green';
+        $code = 'green';
     }
 
     // Redirigir al archivo HTML con el mensaje
-    header("Location: https://trinario.com/trabaja-con-nosotros.php?message=" . urlencode($message)."&code=" . urlencode($code));
+    header("Location: https://trinario.com/trabaja-con-nosotros.php?message=" . urlencode($message) . "&code=" . urlencode($code));
+    // header("Location: http://Localhost/trinario_com/public/trabaja-con-nosotros.php?message=" . urlencode($message)."&code=" . urlencode($code));
 
-    
+
     exit(); // salir después de redirigir
 }

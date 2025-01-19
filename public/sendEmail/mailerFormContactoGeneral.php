@@ -8,7 +8,43 @@ include 'PHPMailer-master/src/Exception.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Llamar a la función si la request es de tipo POST
-    sendEmail();
+   // VALIDACIONES DE RECAPTCHA GOOGLE
+   $secretKey = "6LcSd7wqAAAAAPRIkIh5lkBKVi4oWpRwyNvbF28V";
+   $responseKey = $_POST['g-recaptcha-response'];
+   $userIP =  $_SERVER['REMOTE_ADDR'];
+
+   $url = 'https://www.google.com/recaptcha/api/siteverify';
+   $data = [
+       'secret' => $secretKey,
+       'response' => $responseKey,
+       'remoteip' => $userIP,
+   ];
+
+   $options = [
+       'http' => [
+           'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+           'method' => 'POST',
+           'content' => http_build_query($data),
+       ],
+   ];
+
+   $context = stream_context_create($options);
+   $result = file_get_contents($url, false, $context);
+   $response = json_decode($result);
+
+   if ($response->success) {
+       // Llamar a la función si la request es de tipo POST
+       sendEmail();
+   } else {
+       $msj = "Por favor, confirma que no eres un robot.";
+       $color = "red";
+       //creamos la url de manera dinamica
+       $url = "https://trinario.com/contacto.php?messageContacto=" . urlencode($mjs) . "&code=" . urlencode($color);
+    //    $url = "http://Localhost/trinario_com/public/contacto.php?messageContacto=" . urlencode($msj) . "&code=" . urlencode($color);
+       // Redirigir al archivo HTML con el mensaje
+       header("Location: " . $url);
+       exit(); // salir después de redirigir
+   }
 }
 
 function sendEmail()
@@ -81,6 +117,7 @@ function sendEmail()
 
     //creamos la url de manera dinamica
     $url = "https://trinario.com/contacto.php?messageContacto=" . urlencode($message) . "&code=" . urlencode($code);
+    // $url = "http://Localhost/trinario_com/public/contacto.php?messageContacto="  . urlencode($message) . "&code=" . urlencode($code);
     // Redirigir al archivo HTML con el mensaje
     header("Location: " . $url);
     exit(); // salir después de redirigir

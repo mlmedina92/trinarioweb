@@ -1,22 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><?php echo $title;?></title>
+    <title><?php echo $title; ?></title>
     <meta name="description" content="" />
     <meta name="robots" content="follow, index" />
     <meta name="googlebot" content="index, follow">
-  <link rel="stylesheet" type="text/css" href="css/botonAG.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/botonAG.css" media="screen" />
 
-    <link rel="stylesheet" type="text/css" href="css/fuentes.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen"/>
-    <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"> 
+    <link rel="stylesheet" type="text/css" href="css/fuentes.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.bpopup.min.js"></script>
-    <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"> 
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">    
-<script type="text/javascript" src="js/jquery.bpopup.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script type="text/javascript" src="js/jquery.bpopup.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.whatsapp, #whatsapp').bind('click', function(e) {
@@ -28,8 +29,13 @@
                 });
             });
         });
-    </script>
+    </script>   
+
+    <!-- Vinculacion reCaptcha Google -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
+
 <body>
     <div class="mainwrapp">
         <div class="plr20" id="top">
@@ -42,22 +48,20 @@
                 <p class="tel">+54 (11) 3986-3249</p>
             </div>
         </div>
-    <div id="barra-menu">
+        <div id="barra-menu">
             <nav>
                 <ul class="menu">
-                    <li class="inicio <?php echo ($page == "home") ? "active":"";?>"><a href="./">Inicio</a></li>
-                    <li class="nosotros <?php echo ($page == "nosotros") ? "active":"";?>"><a href="nosotros.php">Nosotros</a></li>
-                    <li class="servicios <?php echo ($page == "servicios") ? "active":"";?>"><a href="servicios.php">Servicios</a></li>
-                    <li class="porque <?php echo ($page == "porque") ? "active":"";?>"><a href="por-que-elegirnos.php">¿Por qué en Trinario?</a></li>
-                    <li class="trabaja <?php echo ($page == "trabaja") ? "active":"";?>"><a href="trabaja-con-nosotros.php">Trabaja con Nosotros</a></li>
-                    <li class="contacto <?php echo ($page == "contacto") ? "active":"";?>"><a href="contacto.php">Contáctanos</a></li>
+                    <li class="inicio <?php echo ($page == "home") ? "active" : ""; ?>"><a href="./">Inicio</a></li>
+                    <li class="nosotros <?php echo ($page == "nosotros") ? "active" : ""; ?>"><a href="nosotros.php">Nosotros</a></li>
+                    <li class="servicios <?php echo ($page == "servicios") ? "active" : ""; ?>"><a href="servicios.php">Servicios</a></li>
+                    <li class="porque <?php echo ($page == "porque") ? "active" : ""; ?>"><a href="por-que-elegirnos.php">¿Por qué en Trinario?</a></li>
+                    <li class="trabaja <?php echo ($page == "trabaja") ? "active" : ""; ?>"><a href="trabaja-con-nosotros.php">Trabaja con Nosotros</a></li>
+                    <li class="contacto <?php echo ($page == "contacto") ? "active" : ""; ?>"><a href="contacto.php">Contáctanos</a></li>
                 </ul>
 
-</nav>
-</div>
+            </nav>
+        </div>
 
-<div id="btnAG" class="animated infinite bounce">
-               <a href="https://trinario.com/consulta-deuda" target="_blank" class="textoAG">Resolvé tu deuda aquí</a>
-</div>
-
-
+        <div id="btnAG" class="animated infinite bounce">
+            <a href="https://trinario.com/consulta-deuda" target="_blank" class="textoAG">Resolvé tu deuda aquí</a>
+        </div>
