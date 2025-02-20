@@ -39,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msj = "Por favor, confirma que no eres un robot.";
         $color = "red";
         //creamos la url de manera dinamica
-        $url = "https://trinario.com/trabaja-con-nosotros.php?message=" . urlencode($mjs) . "&code=" . urlencode($color);
+        // cambiamos esta linea
+        $url = "https://trinario.com/trabaja-con-nosotros.php?message=" . urlencode($msj) . "&code=" . urlencode($color);
         //    $url = "http://Localhost/trinario_com/public/trabaja-con-nosotros.php?message=" . urlencode($msj) . "&code=" . urlencode($color);
         // Redirigir al archivo HTML con el mensaje
         header("Location: " . $url);
